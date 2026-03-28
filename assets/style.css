@@ -77,15 +77,6 @@ a:hover{
     transition:all 0.3 ease-in-out ;
 }
 
-.menu-links{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    width: fit-content;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
 
 .menu-links a{
     display: block;
@@ -140,3 +131,4 @@ a:hover{
 
     transition: all 0.3s ease-in-out;
 }
+/* SECTIONS */

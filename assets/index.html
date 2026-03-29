@@ -8,58 +8,140 @@
     <link rel="stylesheet" href="mediaqueries.css" />  
 </head>
 <body>
+
     <nav id="desktop-nav">
         <div class="logo">Saiket Javeer</div>
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#project">project</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+
     <nav id="hamburger-nav">
-         <div class="logo">Saiket Javeer</div>
-         <div class="hamburger-menu">
-         <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div>
-         <div class="menu-links">
-             <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">experience</a></li>
-                <li><a href="#project" onclick="toggleMenu()">project</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">contact</a></li>
-                </div>
-         </div>
+        <div class="logo">Saiket Javeer</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#project" onclick="toggleMenu()">Project</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
     <section id="profile">
         <div class="section__pic-container">
             <img src="./profile-pic.png" alt="Saiket Javeer">
         </div>
         <div class="section__text">
-            <p class="section__text__p1">Hello,I'm</p>
+            <p class="section__text__p1">Hello, I'm</p>
             <h1 class="title">Saiket Javeer</h1>
             <p class="section__text__p2">Frontend Developer</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="
-                window.open('./resume-example.pdf')">Download CV</button>
-            </div>
-                <button class="btn btn-color-2" onclick="location.href='./#contact'">Contact Info</button>
+                <button class="btn btn-color-2" onclick="window.open('./resume-example.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-2" onclick="location.href='./#contact'">
+                    Contact Info
+                </button>
             </div>
             <div id="socials-container">
-                <img src="./linkedin.png"
-class="icon"
-onclick="location.href='https://www.linkedin.com/in/saiket-javeer'" />
-                <img src="./github.png"
-class="icon"
-onclick="location.href='https://github.com/saiketjaveer-web'" />
+                <img src="./linkedin.png" class="icon" onclick="location.href='https://www.linkedin.com/in/saiket-javeer'" />
+                <img src="./github.png" class="icon" onclick="location.href='https://github.com/saiketjaveer-web'" />
             </div>
         </div>
     </section>
-    <script src="script.js"></script>
+
+   <section id="about">
+    <p class="section__text__p1">Get To Know</p>
+    <h1 class="title">About Me</h1>
     
+    <div class="section-container">
+        <div class="section__pic-container">
+            <img src="./about-pic.png" alt="Profile pic" class="about-pic"/>
+        </div>
+
+        <div class="about-details-section">
+            
+            <div class="about-cards-wrapper">
+                <div class="details-container">
+                    <img src="./experience.png" alt="icon" class="icon" />
+                    <h3>Experience</h3>
+                    <p>2+ years <br /> Frontend Development</p>
+                </div>
+                
+                <div class="details-container">
+                    <img src="./education.png" alt="icon" class="icon" />
+                    <h3>Education</h3>
+                    <p>B.E degree</p>
+                </div>
+            </div>
+
+            <div class="text-container">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque earum totam omnis harum, 
+                    beatae ipsa consequatur reiciendis blanditiis fugit eum. Odit incidunt sed, dolores 
+                    esse minus libero assumenda magnam nesciunt aliquid eveniet laborum cupiditate 
+                    doloribus quam sunt molestiae ipsam magni numquam amet!
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section id="experience">
+    <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Experience</h1>
+    
+    <div class="experience-details-container">
+        <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+                <article>
+                    <img src="./checkmark.png" alt="experience icon" class="icon" />
+                    <div>
+                        <h3>HTML</h3>
+                        <p>Intermediate</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./checkmark.png" alt="experience icon" class="icon" />
+                    <div>
+                        <h3>CSS</h3>
+                        <p>Intermediate</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./checkmark.png" alt="experience icon" class="icon" />
+                    <div>
+                        <h3>JavaScript</h3>
+                        <p>Basic</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./checkmark.png" alt="experience icon" class="icon" />
+                    <div>
+                        <h3>UI/UX</h3>
+                        <p>Intermediate</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
 </body>
 </html>

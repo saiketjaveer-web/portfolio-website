@@ -9,8 +9,9 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background: #F8FAFF;
+    color: #2D2D2D;
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -20,7 +21,7 @@ p {
 }
 
 /* TRANSITIONS */
-a, .btn {
+a, .btn, .details-container {
     transition: all 300ms ease;
 }
 
@@ -42,12 +43,12 @@ nav {
 }
 
 a {
-    color: black;
+    color: #2D2D2D;
     text-decoration: none;
 }
 
 a:hover {
-    color: grey;
+    color: #6C63FF;
     text-decoration: underline;
     text-underline-offset: 1rem;
     text-decoration-color: rgb(181, 181, 181);
@@ -67,11 +68,13 @@ section {
     height: 96vh;
     margin: 0 10rem;
     min-height: fit-content;
+    position: relative; /* Pins the arrow to the section */
 }
 
 .title {
     font-size: 3rem;
     text-align: center;
+    color: #6C63FF;
 }
 
 .section__text__p1 {
@@ -109,6 +112,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -116,20 +120,22 @@ section {
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    background: none;
+    border: none;
+    background: #6C63FF;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    cursor: pointer;
-    background: rgb(53, 53, 53);
-    color: white;
+    background: #4A90E2;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 #socials-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
     gap: 1rem;
 }
 
@@ -138,11 +144,23 @@ section {
     height: 2rem;
 }
 
-/* ABOUT SECTION */
-#about {
-    position: relative;
+/* REUSABLE DETAILS CONTAINER (Cards) */
+.details-container {
+    flex: 1; /* This replaces fixed width, allowing boxes to scale */
+    padding: 1.5rem;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 2rem;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
+.details-container:hover {
+    border-color: rgb(53, 53, 53);
+    transform: translateY(-5px);
+}
+
+/* ABOUT SECTION */
 .section-container {
     display: flex;
     justify-content: center;
@@ -172,19 +190,6 @@ section {
     margin-bottom: 2rem;
 }
 
-.details-container {
-    padding: 1.5rem;
-    flex: 1; 
-    background: white;
-    border-radius: 2rem;
-    border: 1px solid rgb(163, 163, 163);
-    text-align: center;
-}
-
-.details-container:hover {
-    border-color: rgb(53, 53, 53);
-}
-
 .text-container {
     line-height: 1.6;
 }
@@ -195,10 +200,12 @@ section {
 }
 
 /* EXPERIENCE SECTION */
-#experience {
-    position: relative;
+.experience-details-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row; 
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .experience-sub-title {
@@ -207,12 +214,6 @@ section {
     font-size: 1.75rem;
     margin-bottom: 2rem;
     text-align: center;
-}
-
-.experience-details-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .article-container {
@@ -227,7 +228,7 @@ section {
 article {
     display: flex;
     width: 10rem;
-    justify-content: space-around;
+    justify-content: flex-start;
     gap: 0.5rem;
 }
 
@@ -238,8 +239,6 @@ article .icon {
 /* PROJECTS SECTION */
 .project-row {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
@@ -247,7 +246,7 @@ article .icon {
 
 .color-container {
     border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    background: #EEF2FF;
 }
 
 .project-img {
@@ -262,29 +261,25 @@ article .icon {
     text-align: center;
 }
 
-.project-btn {
-    color: black;
-    border-color: rgb(163, 163, 163);
-}
-
-/* contact*/
-#contact{
+/* CONTACT SECTION */
+#contact {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 70vh;
 }
-.contact-info-upper-container{
+
+.contact-info-upper-container {
     display: flex;
     justify-content: center;
     border-radius: 2rem;
-    border: rgb(53, 53, 53);
-    border-color: rgb(163, 163, 163);
+    border: 1px solid rgb(163, 163, 163);
     background: rgb(250, 250, 250);
     margin: 2rem auto;
     padding: 0.5rem;
 }
-.contact-info-container{
+
+.contact-info-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,28 +287,50 @@ article .icon {
     margin: 1rem;
 }
 
-.contact-info-container p{
+.contact-info-container p {
     font-size: larger;
 }
-.contact-icon{
+
+.contact-icon {
     cursor: default;
 }
-.email-icon{
-    height:2.5rem;
-}
-footer{
-    height: 26vh;
-    margin:0 1rem ;
+
+.email-icon {
+    height: 2.5rem;
 }
 
-footer p{
-    text-align: center;
-}
+/* ARROWS & FOOTER */
 .arrow { 
     position: absolute; 
     right: -5rem; 
     bottom: 2.5rem; 
 }
-section {
-    position: relative; /* This "pins" the arrow to the section */
+
+/* FOOTER SECTION */
+footer {
+    height: 26vh;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    background: #6C63FF;
+    color: white;
+}
+footer nav {
+    height: fit-content;
+    justify-content: center;
+}
+
+footer p {
+    text-align: center;
+}
+nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1;
 }
